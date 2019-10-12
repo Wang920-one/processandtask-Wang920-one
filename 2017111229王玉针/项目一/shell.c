@@ -30,7 +30,7 @@ void add(char *str){
 	queue.front=(queue.front+1)%HISTORYNUM; 
 }
 
-char *gethistory(char c)
+char *gethistory(int c)
 {
 	int temp=queue.front;
     while(temp!=queue.rear+1)
@@ -155,6 +155,12 @@ int main(void)
 	pid_t pid;
 	queue.front = -1;
 	queue.rear = 0;
+	
+	char ch;
+	ch=getchar();
+	if(ch=="history")
+	print();
+	
 	while(should_run)
 	{
 		printf("osh> ");      
